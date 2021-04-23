@@ -1,0 +1,60 @@
+<h2>
+Enter Your Personal Details
+</h2>
+<form [formGroup]="userForm" (ngSubmit)="onSubmit()" class="example-form" style="text-align:center">
+
+
+<h3>ENTER YOUR NAME</h3>
+
+<p>
+  <mat-form-field appearance="fill" >
+      <mat-label >FIRST NAME</mat-label>
+     <input matInput required  class="form-control" formControlName="firstname" placeholder="">
+    </mat-form-field>
+</p>
+
+<p>
+  <mat-form-field appearance="fill">
+    <mat-label  >LAST NAME</mat-label>
+    <input matInput required  class="form-control" formControlName="lastname" maxlength="1" placeholder="">
+  </mat-form-field>
+</p>
+
+<h4>SELECT THE GENDER</h4>
+<p>
+<mat-form-field appearance="fill">
+     <mat-label>Gender</mat-label>
+     <select matNativeControl required>
+     <option value="Male" >Male</option>
+     <option value="Female" >Female</option>
+     </select>
+   </mat-form-field>
+</p>
+<h5>ENTER YOUR AGE</h5>
+<p>
+  <mat-form-field appearance="fill">
+    <mat-label>AGE</mat-label>
+    <input matInput required  maxlength="2" class="form-control" formControlName="age" placeholder="">
+  </mat-form-field>
+</p>
+
+<h6>ENTER YOUR MOBILE NUMBER</h6>
+<mat-form-field appearance="fill">
+  <mat-label >NUMBER</mat-label>
+  <input matInput required  class="form-control" maxlength="10"  formControlName="number" placeholder="">
+</mat-form-field>
+
+ <div class="example-label"></div>
+  <div class="example-button-row">
+    <button mat-raised-button type="Submit" value="Submit"
+    >Submit</button>
+  </div>
+<div class="form-group" style="text-align:center">
+  <mat-form-field>
+    <mat-label>Select the name</mat-label>
+     <mat-select>
+     <mat-option (onSelectionChange)="onSubmit()" *ngFor="let user of usercreation" value="fname">{{user.viewValue}}</mat-option>
+   </mat-select>
+ </mat-form-field>
+</div>
+
